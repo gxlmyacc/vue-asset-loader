@@ -1,5 +1,5 @@
 {
-  "name": "vue-file-loader",
+  "name": "vue-asset-loader",
   "version": "0.1.0",
   "description": "a file-loader for Vue solve the image relative path issues when HTML and CSS not in the same directory",
   "main": "index.js",

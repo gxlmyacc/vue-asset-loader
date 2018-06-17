@@ -1,4 +1,4 @@
-# vue-file-loader 
+# vue-asset-loader 
 
 this is a file-loader wrapper for Vue and Webpack, solve the image relative path issues when HTML and CSS are not in the same directory.
 
@@ -28,13 +28,13 @@ then webpack will translate `images/1.png` to `../images/1.png`, this does solve
 <img src="image/2.png">
 ```
 webpack will translate `images/2.png` to `../images/2.png`, it leads html load `2.png` failure, so file-loader can't tell the picture from HTML or CSS.
-vue-file-loader just solving this issues!
+vue-asset-loader just solving this issues!
 your webpack config can be like this:
 
 ```
 { 
   test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, 
-  use: [{ loader: 'vue-file-loader', options: { publicPath: '', publicStylePath: '../', name: '/images/[name].[ext]?[hash]' }]
+  use: [{ loader: 'vue-asset-loader', options: { publicPath: '', publicStylePath: '../', name: '/images/[name].[ext]?[hash]' }]
 }
 ```
 or 
@@ -47,10 +47,10 @@ or
       limit: 2048, 
       publicPath: '', 
       publicStylePath: '../', 
-      fallback: 'vue-file-loader',
+      fallback: 'vue-asset-loader',
       name: '/images/[name].[ext]?[hash]' 
     }
   ]
 }
 ```
-vue-file-loader will choose `publicPath` or `publicStylePath` based on the image from HTML or CSS.
+vue-asset-loader will choose `publicPath` or `publicStylePath` based on the image from HTML or CSS.
