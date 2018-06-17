@@ -28,7 +28,8 @@ then webpack will translate `images/1.png` to `../images/1.png`, this does solve
 <img src="image/2.png">
 ```
 webpack will translate `images/2.png` to `../images/2.png`, it leads html load `2.png` failure, so file-loader can't tell the picture from HTML or CSS.
-vue-file-loader just solving this issues. your webpack config can be like this:
+vue-file-loader just solving this issues!
+your webpack config can be like this:
 
 ```
 { 
@@ -52,4 +53,4 @@ or
   ]
 }
 ```
-vue-file-loader willchoose `publicPath` or `publicStylePath` based on the image from HTML or CSS.
+vue-file-loader will choose `publicPath` or `publicStylePath` based on the image from HTML or CSS.
