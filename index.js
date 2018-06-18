@@ -6,7 +6,7 @@ function handlePath (path, url) {
   else return path + '/' + url;
 }
 let originPublicPath = undefined;
-module.exports = function loader (content) {
+module.exports = function loader () {
   let options = loaderUtils.getOptions(this) || {};
   if (options.publicStylePath) {
     if (originPublicPath === undefined) originPublicPath = options.publicPath;
@@ -18,5 +18,5 @@ module.exports = function loader (content) {
   }
 
   const fileLoader = require('file-loader');
-  return fileLoader.call(this, content);
+  return fileLoader.apply(this, arguments);
 };
