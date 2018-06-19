@@ -20,3 +20,4 @@ module.exports = function loader () {
   const fileLoader = require('file-loader');
   return fileLoader.apply(this, arguments);
 };
+exports.raw = true;
