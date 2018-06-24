@@ -29,7 +29,17 @@ script
   1.js
   2.js
 ```
-1.css load 1.png, the url in `vue style` section may be write like this `url(images/1.png)`, to support that, your webpack config maybe like this:
+1.css load 1.png, the url in `vue style` section may be write like this:
+```html
+<style>
+  ...some css...
+  .some-selector {
+    background: url(images/1.png);
+  }
+  ...some css...
+</style>
+```
+to support that output directory structure, your webpack config maybe like this:
 ```js
 { 
   test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, 
@@ -39,7 +49,11 @@ script
 
 then webpack will translate `images/1.png` to `../images/1.png`, this does solve the issues, but wait, if your `vue template` section has img tag that:
 ```html
-<img src="image/2.png">
+<template>
+  ...some html...
+  <img src="image/2.png">
+  ...some html...
+</template>
 ```
 webpack will translate `images/2.png` to `../images/2.png`, it leads html load `2.png` failure, so file-loader can't tell the picture from HTML or CSS.
 `vue-asset-loader` just solving this issues!
