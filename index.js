@@ -12,7 +12,7 @@ module.exports = function loader () {
     if (originPublicPath === undefined) originPublicPath = options.publicPath;
     let _query = this._compilation.name;
     options.publicPath = function (url) {
-      if (_query && /(?:\=|\.)(?:scss|less|styl|stylus|css)$/.test(_query)) return handlePath(options.publicStylePath, url);
+      if (_query && /(?:\=|\.)(?:scss|less|styl|stylus|css)&?$/.test(_query)) return handlePath(options.publicStylePath, url);
       else return handlePath(originPublicPath, url);
     };
   }
