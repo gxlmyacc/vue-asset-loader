@@ -49,7 +49,7 @@ to support that output directory structure, your webpack config maybe like this:
 
 ```js
 {
-  test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, 
+  test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
   use: [{ loader: 'file-loader', options: { publicPath: '../', name: 'images/[name].[ext]?[hash]' }]
 }
 ```
@@ -70,7 +70,7 @@ your webpack config can be like this:
 
 ```js
 {
-  test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, 
+  test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
   use: [{ loader: 'vue-asset-loader', options: { publicPath: '', publicStylePath: '../', name: 'images/[name].[ext]?[hash]' }]
 }
 ```

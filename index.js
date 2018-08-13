@@ -5,14 +5,15 @@ function handlePath (path, url) {
   else if (path.endsWith('/')) return path + url;
   else return path + '/' + url;
 }
-let originPublicPath = undefined;
+var originPublicPath = undefined;
+var REGX = /(?:\=|\.)(?:scss|sass|less|styl|stylus|css)(?:&scoped=true)?&?$/;
 module.exports = function loader () {
-  let options = loaderUtils.getOptions(this) || {};
+  var options = loaderUtils.getOptions(this) || {};
   if (options.publicStylePath) {
     if (originPublicPath === undefined) originPublicPath = options.publicPath;
-    let _query = this._compilation.name;
+    var _query = this._compilation.name;
     options.publicPath = function (url) {
-      if (_query && /(?:\=|\.)(?:scss|less|styl|stylus|css)&?$/.test(_query)) return handlePath(options.publicStylePath, url);
+      if (_query && REGX.test(_query)) return handlePath(options.publicStylePath, url);
       else return handlePath(originPublicPath, url);
     };
   }
