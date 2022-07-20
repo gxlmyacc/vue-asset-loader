@@ -1,9 +1,9 @@
 # vue-asset-loader
 
+This is a `file-loader` wrapper for Vue and Webpack, solve the image relative path issues when HTML and CSS are not in the same directory.
+
 [![NPM version](https://img.shields.io/npm/v/vue-asset-loader.svg?style=flat)](https://npmjs.com/package/vue-asset-loader)
 [![NPM downloads](https://img.shields.io/npm/dm/vue-asset-loader.svg?style=flat)](https://npmjs.com/package/vue-asset-loader)
-
-This is a `file-loader` wrapper for Vue and Webpack, solve the image relative path issues when HTML and CSS are not in the same directory.
 
 ## install
 
@@ -11,6 +11,10 @@ To begin, you'll need to install `vue-asset-loader`:
 
 ```bash
 npm install vue-asset-loader --save-dev
+```
+or
+```bash
+yarn add -D vue-asset-loader
 ```
 
 `vue-asset-loader` works like

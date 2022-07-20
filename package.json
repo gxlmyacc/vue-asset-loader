@@ -1,17 +1,18 @@
 {
   "name": "vue-asset-loader",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "a file-loader for Vue solve the image relative path issues when HTML and CSS not in the same directory",
-  "main": "index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gxlmyacc/vue-file-loader.git"
+    "url": "git+https://github.com/gxlmyacc/vue-asset-loader.git"
   },
   "keywords": [
-    "vue-file-loader",
+    "vue-asset-loader",
     "file-loader",
     "vue",
     "webpack"
@@ -19,19 +20,19 @@
   "author": "gxlmyacc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gxlmyacc/vue-file-loader/issues"
+    "url": "https://github.com/gxlmyacc/vue-asset-loader/issues"
   },
-  "homepage": "https://github.com/gxlmyacc/vue-file-loader#readme",
+  "homepage": "https://github.com/gxlmyacc/vue-asset-loader#readme",
   "engines": {
     "node": ">= 6.9.0 || >= 8.9.0"
   },
   "dependencies": {
-    "loader-utils": "^1.1.0"
+    "loader-utils": "^2.0.2"
   },
   "peerDependencies": {
-    "webpack": "^3.0.0 || ^4.0.0"
+    "webpack": "^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "file-loader": "^1.1.11"
+    "file-loader": "^6.2.0"
   }
 }
