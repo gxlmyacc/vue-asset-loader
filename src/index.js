@@ -7,7 +7,7 @@ function handlePath (path, url) {
 }
 var originOutputPath = undefined;
 var originPublicPath = undefined;
-var REGX = /(?:\=|\.)(?:scss|sass|less|styl|stylus|css)(?:&scoped=true)?&?$/;
+var STYLE_REGX = /(?:\=|\.)(?:scss|sass|less|styl|stylus|css)(?:&scoped=true)?&?$/;
 module.exports = function loader () {
   var options = loaderUtils.getOptions(this) || {};
 
@@ -24,7 +24,7 @@ module.exports = function loader () {
     if (originPublicPath === undefined) originPublicPath = options.publicPath;
     var _query = this._compilation.name;
     options.publicPath = function (url) {
-      if (_query && REGX.test(_query)) return handlePath(options.publicStylePath, url);
+      if (_query && STYLE_REGX.test(_query)) return handlePath(options.publicStylePath, url);
       else return handlePath(originPublicPath, url);
     };
   }

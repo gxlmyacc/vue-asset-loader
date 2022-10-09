@@ -75,7 +75,15 @@ your webpack config can be like this:
 ```js
 {
   test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
-  use: [{ loader: 'vue-asset-loader', options: { publicPath: '', publicStylePath: '../', name: 'images/[name].[ext]?[hash]' }]
+  use: [
+    { 
+      loader: 'vue-asset-loader', 
+      options: { 
+        publicPath: '', 
+        publicStylePath: '../', 
+        name: 'images/[name].[ext]?[hash]' 
+      }
+  ]
 }
 ```
 
